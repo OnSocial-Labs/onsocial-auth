@@ -1,3 +1,4 @@
+import "./shim";
 import * as nearAPI from "near-api-js";
 export type WalletAction = {
     type: "Transfer";
