@@ -1,4 +1,4 @@
-import * as nearAPI from "../../node_modules/near-api-js";
+import * as nearAPI from "near-api-js";
 
 export const initWallet = async (network: "mainnet" | "testnet") => {
   const config: nearAPI.ConnectConfig = {
