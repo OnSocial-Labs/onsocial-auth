@@ -4,6 +4,9 @@ if (typeof require === "function") {
     if (moduleName === "http") {
       return require("react-native-fetch-api/http");
     }
+    if (moduleName === "util") {
+      return require("util");
+    }
     return originalRequire(moduleName);
   };
 }

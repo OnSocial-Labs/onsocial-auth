@@ -22,7 +22,8 @@
     "expo-secure-store": "^13.0.2",
     "near-api-js": "^5.1.0",
     "react-native-fetch-api": "^3.0.0",
-    "tweetnacl": "^1.0.3"
+    "tweetnacl": "^1.0.3",
+    "util": "^0.12.5"
   },
   "peerDependencies": {
     "expo": ">=50.0.0",
