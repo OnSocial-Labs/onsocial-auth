@@ -46,7 +46,7 @@ export const WalletSetup: React.FC<WalletSetupProps> = ({
             ? {
                 text: "Copy Faucet Link",
                 onPress: () => {
-                  if (Clipboard) {
+                  if (Clipboard && Clipboard.setString) {
                     Clipboard.setString("https://near-faucet.io/testnet");
                   } else {
                     Alert.alert("Clipboard not available");
