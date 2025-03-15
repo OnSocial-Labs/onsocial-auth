@@ -8,9 +8,9 @@ import {
   Alert,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import { useWallet } from "@context/useWallet";
-import { AuthSetup } from "@components/AuthSetup";
-import { sharedStyles } from "@components/styles";
+import { useWallet } from "../context/useWallet";
+import { AuthSetup } from "./AuthSetup";
+import { sharedStyles } from "./styles";
 import Clipboard from "@react-native-clipboard/clipboard";
 
 interface WalletSetupProps {

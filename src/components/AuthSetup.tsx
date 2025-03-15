@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, Button, Modal, Alert } from "react-native";
 import * as LocalAuthentication from "expo-local-authentication";
 import * as SecureStore from "expo-secure-store";
-import { sharedStyles } from "@components/styles";
+import { sharedStyles } from "./styles";
 
 interface AuthSetupProps {
   visible: boolean;

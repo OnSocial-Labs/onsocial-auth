@@ -3,9 +3,9 @@
     "baseUrl": "src",
     "outDir": "lib",
     "paths": {
-      "@components/*": ["components/*"],
-      "@context/*": ["context/*"],
-      "@wallet/*": ["wallet/*"]
+      "components/*": ["src/components/*"],
+      "context/*": ["src/context/*"],
+      "wallet/*": ["src/wallet/*"]
     },
     "target": "esnext",
     "module": "esnext",

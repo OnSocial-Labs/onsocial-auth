@@ -1,13 +1,13 @@
 import React, { createContext, useState, useEffect } from "react";
 import * as nearAPI from "near-api-js";
 import * as SecureStore from "expo-secure-store";
-import { initWallet } from "@wallet/initWallet";
+import { initWallet } from "../wallet/initWallet";
 import {
   createNewAccount,
   importWallet,
   signTransaction,
   refreshBalance,
-} from "@context/walletActions";
+} from "./walletActions";
 
 export type WalletAction =
   | { type: "Transfer"; params: { amount: string } }
@@ -104,4 +104,4 @@ export const WalletProvider: React.FC<{ children: React.ReactNode }> = ({
 };
 
 // Optional: Re-export useWallet here if you want it accessible from this file
-export { useWallet } from "@context/useWallet";
+export { useWallet } from "./useWallet";

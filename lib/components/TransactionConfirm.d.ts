@@ -1,5 +1,5 @@
 import React from "react";
-import { Transaction } from "@context/WalletContext";
+import { Transaction } from "../context/WalletContext";
 interface TransactionConfirmProps {
     transaction: Transaction;
     onComplete: () => void;

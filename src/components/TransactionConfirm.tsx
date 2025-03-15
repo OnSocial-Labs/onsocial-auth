@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, Button, Alert } from "react-native";
-import { useWallet } from "@context/useWallet"; // Updated import
-import { Transaction, WalletAction } from "@context/WalletContext";
-import { sharedStyles } from "@components/styles";
+import { useWallet } from "../context/useWallet";
+import { Transaction, WalletAction } from "../context/WalletContext";
+import { sharedStyles } from "./styles";
 
 interface TransactionConfirmProps {
   transaction: Transaction;
@@ -23,7 +23,6 @@ export const TransactionConfirm: React.FC<TransactionConfirmProps> = ({
       Alert.alert("Success", "Transaction signed and sent!");
       onComplete();
     } catch (error: unknown) {
-      // Updated to unknown
       Alert.alert(
         "Error",
         error instanceof Error ? error.message : "An unknown error occurred"

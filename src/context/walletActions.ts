@@ -2,7 +2,7 @@ import * as nearAPI from "near-api-js";
 import * as bip39 from "bip39";
 import { KeyPair, utils } from "near-api-js";
 import * as SecureStore from "expo-secure-store";
-import { Transaction, WalletAction } from "@context/WalletContext";
+import { Transaction, WalletAction } from "./WalletContext";
 
 export const createNewAccount = async (
   accountId: string,

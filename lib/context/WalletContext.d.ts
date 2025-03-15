@@ -28,4 +28,4 @@ export declare const WalletContext: React.Context<WalletContextType | undefined>
 export declare const WalletProvider: React.FC<{
     children: React.ReactNode;
 }>;
-export { useWallet } from "@context/useWallet";
+export { useWallet } from "./useWallet";

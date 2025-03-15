@@ -1,5 +1,5 @@
-import * as nearAPI from "near-api-js";
-import * as bip39 from "bip39";
+import * as nearAPI from "../../node_modules/near-api-js";
+import * as bip39 from "../../node_modules/bip39";
 
 export const generateKeyPairFromMnemonic = async (
   mnemonic: string,

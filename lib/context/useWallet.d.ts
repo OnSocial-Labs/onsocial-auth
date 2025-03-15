@@ -1,2 +1,2 @@
-import { WalletContextType } from "@context/WalletContext";
+import { WalletContextType } from "./WalletContext";
 export declare const useWallet: () => WalletContextType;
