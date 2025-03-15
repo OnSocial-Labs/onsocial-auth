@@ -6,9 +6,9 @@ import {
   Button,
   ActivityIndicator,
   Alert,
-  Clipboard, // Built-in Clipboard API
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import Clipboard from "@react-native-clipboard/clipboard"; // Updated Clipboard import
 import { useWallet } from "../context/useWallet";
 import { AuthSetup } from "./AuthSetup";
 import { sharedStyles } from "./styles";
@@ -45,7 +45,7 @@ export const WalletSetup: React.FC<WalletSetupProps> = ({
             ? {
                 text: "Copy Faucet Link",
                 onPress: () => {
-                  Clipboard.setString("https://near-faucet.io/testnet"); // Using built-in Clipboard API
+                  Clipboard.setString("https://near-faucet.io/testnet"); // Using the new Clipboard API
                 },
               }
             : { text: "OK" },
