@@ -1,0 +1,56 @@
+{
+  "name": "@onsocial-labs/onsocial-auth",
+  "version": "0.1.0",
+  "description": "A React Native authentication and wallet management library for NEAR Protocol",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build",
+    "clean": "del /s /q lib"
+  },
+  "dependencies": {
+    "@onsocial-labs/onsocial-auth": "link:",
+    "@react-native-clipboard/clipboard": "^1.13.2",
+    "@react-native-picker/picker": "^2.7.0",
+    "bip39": "^3.1.0",
+    "expo-local-authentication": "^13.8.0",
+    "expo-secure-store": "^12.8.1",
+    "near-api-js": "^2.1.4",
+    "onsocial-auth": "link:../../../AppData/Local/pnpm/global/5/node_modules/@onsocial-labs/onsocial-auth"
+  },
+  "peerDependencies": {
+    "expo": ">=50.0.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.73.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "react-native",
+    "near-protocol",
+    "wallet",
+    "authentication",
+    "typescript"
+  ],
+  "author": "OnSocial Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onsocial-labs/onsocial-auth.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "overrides": {
+      "onsocial-auth": "link:../../../AppData/Local/pnpm/global/5/node_modules/@onsocial-labs/onsocial-auth",
+      "@onsocial-labs/onsocial-auth": "link:"
+    }
+  }
+}
