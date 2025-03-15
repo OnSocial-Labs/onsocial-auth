@@ -20,7 +20,8 @@
     "bip39": "^3.1.0",
     "expo-local-authentication": "^13.8.0",
     "expo-secure-store": "^13.0.2",
-    "near-api-js": "^2.1.4"
+    "near-api-js": "^2.1.4",
+    "react-native-fetch-api": "^3.0.0"
   },
   "peerDependencies": {
     "expo": ">=50.0.0",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
+    "patch-package": "^8.0.0",
     "typescript": "^5.3.3"
   },
   "keywords": [
