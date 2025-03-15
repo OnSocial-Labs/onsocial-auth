@@ -3,6 +3,7 @@ import * as bip39 from "bip39";
 import { KeyPair, utils } from "near-api-js";
 import * as SecureStore from "expo-secure-store";
 import { Transaction, WalletAction } from "./WalletContext";
+import nacl from "tweetnacl";
 
 export const createNewAccount = async (
   accountId: string,
@@ -19,9 +20,7 @@ export const createNewAccount = async (
     const keyStore = new keyStores.InMemoryKeyStore();
     const newMnemonic = bip39.generateMnemonic();
     const seed = await bip39.mnemonicToSeed(newMnemonic); // Add this line
-    const keyPairInstance = KeyPair.fromString(
-      utils.serialize.base_encode(seed.slice(0, 32))
-    ); // Updated
+    const keyPairInstance = generateKeyPair(seed); // Updated
     await keyStore.setKey(network, accountId, keyPairInstance);
 
     const near = wallet._near;
@@ -59,9 +58,7 @@ export const importWallet = async (
     const { keyStores } = nearAPI;
     const keyStore = new keyStores.InMemoryKeyStore();
     const seed = await bip39.mnemonicToSeed(mnemonic);
-    const keyPairInstance = KeyPair.fromString(
-      utils.serialize.base_encode(seed.slice(0, 32))
-    ); // Updated
+    const keyPairInstance = generateKeyPair(seed); // Updated
     await keyStore.setKey(network, accountId, keyPairInstance);
 
     const near = wallet._near;
@@ -96,7 +93,7 @@ export const signTransaction = async (
       switch (action.type) {
         case "Transfer":
           return nearAPI.transactions.transfer(
-            nearAPI.utils.format.parseNearAmount(action.params.amount)
+            parseNearAmount(action.params.amount)
           );
         default:
           throw new Error(`Unsupported action type: ${action.type}`);
@@ -141,4 +138,19 @@ export const refreshBalance = async (
       }`
     );
   }
+};
+
+const generateKeyPair = (seed: Uint8Array) => {
+  return nearAPI.KeyPair.fromString(
+    Buffer.from(
+      nacl.sign.keyPair.fromSeed(seed.slice(0, 32)).secretKey
+    ).toString("hex") as nearAPI.utils.KeyPairString
+  );
+};
+
+const parseNearAmount = (amount: string | null) => {
+  if (amount === null) {
+    throw new Error("Amount cannot be null");
+  }
+  return nearAPI.utils.format.parseNearAmount(amount) as unknown as bigint;
 };
