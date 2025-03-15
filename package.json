@@ -1,6 +1,6 @@
 {
   "name": "@onsocial-labs/onsocial-auth",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A React Native authentication and wallet management library for NEAR Protocol",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
