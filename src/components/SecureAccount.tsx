@@ -13,8 +13,12 @@ export const SecureAccount: React.FC<SecureAccountProps> = ({ onComplete }) => {
 
   const copyMnemonic = () => {
     if (mnemonic) {
-      Clipboard.setString(mnemonic);
-      Alert.alert("Copied", "Mnemonic copied to clipboard");
+      if (Clipboard) {
+        Clipboard.setString(mnemonic);
+        Alert.alert("Copied", "Mnemonic copied to clipboard");
+      } else {
+        Alert.alert("Clipboard not available");
+      }
     }
   };
 
