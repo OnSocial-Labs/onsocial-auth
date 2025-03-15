@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Text, Button, Alert } from "react-native";
+import { View, Text, Button, Alert, Clipboard } from "react-native"; // Built-in Clipboard API
 import { useWallet } from "../context/useWallet";
 import { sharedStyles } from "./styles";
-import Clipboard from "@react-native-community/clipboard";
 
 interface SecureAccountProps {
   onComplete: () => void;
@@ -13,12 +12,8 @@ export const SecureAccount: React.FC<SecureAccountProps> = ({ onComplete }) => {
 
   const copyMnemonic = () => {
     if (mnemonic) {
-      if (Clipboard && Clipboard.setString) {
-        Clipboard.setString(mnemonic);
-        Alert.alert("Copied", "Mnemonic copied to clipboard");
-      } else {
-        Alert.alert("Clipboard not available");
-      }
+      Clipboard.setString(mnemonic); // Using built-in Clipboard API
+      Alert.alert("Copied", "Mnemonic copied to clipboard");
     }
   };
 

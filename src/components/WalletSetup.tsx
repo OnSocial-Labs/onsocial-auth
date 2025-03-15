@@ -6,12 +6,12 @@ import {
   Button,
   ActivityIndicator,
   Alert,
+  Clipboard, // Built-in Clipboard API
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { useWallet } from "../context/useWallet";
 import { AuthSetup } from "./AuthSetup";
 import { sharedStyles } from "./styles";
-import Clipboard from "@react-native-community/clipboard";
 
 interface WalletSetupProps {
   onSetupComplete: (accountId: string) => void;
@@ -37,7 +37,6 @@ export const WalletSetup: React.FC<WalletSetupProps> = ({
       await createNewAccount(accountId, network);
       setShowAuthSetup(true);
     } catch (error: unknown) {
-      // Updated to unknown
       Alert.alert(
         "Error",
         error instanceof Error ? error.message : "An unknown error occurred",
@@ -46,11 +45,7 @@ export const WalletSetup: React.FC<WalletSetupProps> = ({
             ? {
                 text: "Copy Faucet Link",
                 onPress: () => {
-                  if (Clipboard && Clipboard.setString) {
-                    Clipboard.setString("https://near-faucet.io/testnet");
-                  } else {
-                    Alert.alert("Clipboard not available");
-                  }
+                  Clipboard.setString("https://near-faucet.io/testnet"); // Using built-in Clipboard API
                 },
               }
             : { text: "OK" },
@@ -70,7 +65,6 @@ export const WalletSetup: React.FC<WalletSetupProps> = ({
       await importWallet(accountId, importKey, network);
       setShowAuthSetup(true);
     } catch (error: unknown) {
-      // Updated to unknown
       Alert.alert(
         "Error",
         error instanceof Error ? error.message : "An unknown error occurred"
