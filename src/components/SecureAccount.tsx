@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button, Alert } from "react-native";
 import { useWallet } from "../context/useWallet";
 import { sharedStyles } from "./styles";
-import Clipboard from "@react-native-clipboard/clipboard";
+import Clipboard from "@react-native-community/clipboard";
 
 interface SecureAccountProps {
   onComplete: () => void;

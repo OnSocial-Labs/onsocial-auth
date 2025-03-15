@@ -11,7 +11,7 @@ import { Picker } from "@react-native-picker/picker";
 import { useWallet } from "../context/useWallet";
 import { AuthSetup } from "./AuthSetup";
 import { sharedStyles } from "./styles";
-import Clipboard from "@react-native-clipboard/clipboard";
+import Clipboard from "@react-native-community/clipboard";
 
 interface WalletSetupProps {
   onSetupComplete: (accountId: string) => void;
