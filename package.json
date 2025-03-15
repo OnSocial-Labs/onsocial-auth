@@ -10,17 +10,17 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "pnpm run build",
-    "clean": "del /s /q lib"
+    "clean": "del /s /q lib\\* && rmdir /s /q lib"
   },
   "dependencies": {
-    "@onsocial-labs/onsocial-auth": "link:",
+    "@babel/runtime": "^7.26.10",
+    "@onsocial-labs/onsocial-auth": "^0.1.0",
     "@react-native-clipboard/clipboard": "^1.13.2",
     "@react-native-picker/picker": "^2.7.0",
     "bip39": "^3.1.0",
     "expo-local-authentication": "^13.8.0",
-    "expo-secure-store": "^12.8.1",
-    "near-api-js": "^2.1.4",
-    "onsocial-auth": "link:../../../AppData/Local/pnpm/global/5/node_modules/@onsocial-labs/onsocial-auth"
+    "expo-secure-store": "^13.0.2",
+    "near-api-js": "^2.1.4"
   },
   "peerDependencies": {
     "expo": ">=50.0.0",
@@ -42,15 +42,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/onsocial-labs/onsocial-auth.git"
+    "url": "git+https://github.com/onsocial-labs/onsocial-auth.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "pnpm": {
-    "overrides": {
-      "onsocial-auth": "link:../../../AppData/Local/pnpm/global/5/node_modules/@onsocial-labs/onsocial-auth",
-      "@onsocial-labs/onsocial-auth": "link:"
-    }
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
