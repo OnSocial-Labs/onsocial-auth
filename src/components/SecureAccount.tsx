@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button, Alert } from "react-native";
-import Clipboard from "@react-native-clipboard/clipboard"; // Updated Clipboard import
+import * as Clipboard from "expo-clipboard"; // Updated Clipboard import
 import { useWallet } from "../context/useWallet";
 import { sharedStyles } from "./styles";
 

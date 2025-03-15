@@ -15,9 +15,9 @@
   "dependencies": {
     "@babel/runtime": "^7.26.10",
     "@onsocial-labs/onsocial-auth": "^0.1.0",
-    "@react-native-clipboard/clipboard": "^1.16.2",
     "@react-native-picker/picker": "^2.7.0",
     "bip39": "^3.1.0",
+    "expo-clipboard": "^7.0.1",
     "expo-local-authentication": "^13.8.0",
     "expo-secure-store": "^13.0.2",
     "near-api-js": "^5.1.0",

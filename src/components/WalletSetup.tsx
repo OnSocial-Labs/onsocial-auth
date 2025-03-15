@@ -8,7 +8,7 @@ import {
   Alert,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import Clipboard from "@react-native-clipboard/clipboard"; // Updated Clipboard import
+import * as Clipboard from "expo-clipboard"; // Updated Clipboard import
 import { useWallet } from "../context/useWallet";
 import { AuthSetup } from "./AuthSetup";
 import { sharedStyles } from "./styles";
